@@ -54,7 +54,7 @@ export default function Projects() {
             <p className="text-soft-muted mb-4">
               Interested in seeing more of my work?
             </p>
-            <a href="https://github.com/Ehsanrasheed" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <a href="https://github.com/Ehsanrasheed" target="_blank" rel="noopener noreferrer" className="btn btn-primary hover:scale-105 active:scale-95 transition-transform duration-300">
               View GitHub Profile
             </a>
           </motion.div>

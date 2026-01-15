@@ -3,7 +3,7 @@
 A clean, modern, recruiter-friendly developer portfolio built with **React 18**, **Tailwind CSS**, and **Framer Motion**. Showcasing MERN Stack expertise with a minimal, professional design.
 
 🌐 **Live**: http://localhost:5173/  
-📧 **Email**: ehsanrasheed@gmail.com  
+📧 **Email**: m.ehsanrasheed@gmail.com  
 💼 **LinkedIn**: [linkedin.com/in/ehsanrasheed](https://linkedin.com/in/ehsanrasheed)  
 🔗 **GitHub**: [github.com/Ehsanrasheed](https://github.com/Ehsanrasheed)
 
@@ -328,7 +328,7 @@ Open source - available for personal and commercial use.
 BS Computer Science Student at COMSATS Lahore  
 MERN Stack Developer
 
-📧 [ehsanrasheed@gmail.com](mailto:ehsanrasheed@gmail.com)  
+📧 [m.ehsanrasheed@gmail.com](mailto:m.ehsanrasheed@gmail.com)  
 💼 [LinkedIn](https://linkedin.com/in/ehsanrasheed)  
 🔗 [GitHub](https://github.com/Ehsanrasheed)
 

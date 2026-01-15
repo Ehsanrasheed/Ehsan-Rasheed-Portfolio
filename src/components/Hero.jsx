@@ -38,10 +38,10 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a href="#projects" className="btn btn-primary">
+            <a href="#projects" className="btn btn-primary hover:scale-105 active:scale-95 transition-transform duration-300">
               View My Projects
             </a>
-            <button onClick={handleDownload} className="btn btn-secondary">
+            <button onClick={handleDownload} className="btn btn-secondary hover:scale-105 active:scale-95 transition-transform duration-300">
               Download Resume
             </button>
           </div>

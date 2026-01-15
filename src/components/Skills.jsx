@@ -68,11 +68,11 @@ export default function Skills() {
             {skillCategories.map((group, index) => (
               <motion.div
                 key={index}
-                className="card p-6 space-y-4"
+                className="card p-6 sm:p-8 space-y-4 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
                 variants={itemVariants}
               >
                 {/* Category Title */}
-                <h3 className="text-card-title text-soft-text font-bold border-b border-gray-300 pb-3">
+                <h3 className="text-lg sm:text-card-title text-soft-text font-bold border-b border-gray-300 pb-3">
                   {group.category}
                 </h3>
 
@@ -81,7 +81,7 @@ export default function Skills() {
                   {group.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="inline-block bg-soft-accent/10 text-soft-accent px-3 py-1 rounded-full text-sm font-medium"
+                      className="inline-block bg-soft-accent/10 text-soft-accent px-3 py-1 rounded-full text-xs sm:text-sm font-medium hover:bg-soft-accent/20 transition-colors duration-300"
                     >
                       {skill}
                     </span>
@@ -102,7 +102,7 @@ export default function Skills() {
             <p className="text-soft-muted mb-4">
               Want to see these skills in action?
             </p>
-            <a href="#projects" className="btn btn-primary">
+            <a href="#projects" className="btn btn-primary hover:scale-105 active:scale-95 transition-transform duration-300">
               View My Projects
             </a>
           </motion.div>

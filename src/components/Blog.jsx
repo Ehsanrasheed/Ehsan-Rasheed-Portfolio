@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 export default function Blog() {
   const articles = [
@@ -72,21 +73,21 @@ export default function Blog() {
             viewport={{ once: true }}
           >
             {articles.map((article) => (
-              <motion.article
-                key={article.id}
-                className="card p-8 hover:shadow-md transition-shadow"
-                variants={itemVariants}
-              >
-                <div className="space-y-3">
+              <Link key={article.id} to={`/blog/${article.slug}`} className="no-underline">
+                <motion.article
+                  className="card p-6 sm:p-8 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer h-full"
+                  variants={itemVariants}
+                >
+                  <div className="space-y-3">
                   {/* Meta Info */}
-                  <div className="flex items-center gap-4 text-sm text-soft-muted">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-soft-muted">
                     <span>{article.date}</span>
-                    <span>•</span>
+                    <span className="hidden sm:inline">•</span>
                     <span>{article.readTime}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-card-title text-soft-text hover:text-soft-accent transition-colors cursor-pointer">
+                  <h3 className="text-lg sm:text-card-title text-soft-text hover:text-soft-accent transition-colors duration-300 cursor-pointer hover:translate-x-1 transform duration-300">
                     {article.title}
                   </h3>
 
@@ -109,12 +110,13 @@ export default function Blog() {
 
                   {/* Read More Link */}
                   {article.date !== 'Coming Soon' && (
-                    <button className="text-soft-accent hover:text-blue-700 font-medium transition-colors pt-2">
+                    <Link to={`/blog/${article.slug}`} className="text-soft-accent hover:text-blue-700 font-medium transition-colors duration-300 pt-2 hover:translate-x-1 transform duration-300 inline-block">
                       Read Full Article →
-                    </button>
+                    </Link>
                   )}
                 </div>
               </motion.article>
+              </Link>
             ))}
           </motion.div>
 
@@ -129,7 +131,7 @@ export default function Blog() {
             <p className="text-soft-muted mb-4">
               More articles coming soon. Subscribe to stay updated.
             </p>
-            <a href="#contact" className="btn btn-primary">
+            <a href="#contact" className="btn btn-primary hover:scale-105 active:scale-95 transition-transform duration-300">
               Get in Touch
             </a>
           </motion.div>
