@@ -1,36 +1,71 @@
 import { motion } from 'framer-motion'
 
 export default function Hero() {
+  const handleDownload = () => {
+    const resumeUrl = new URL('/Ehsan-Rasheed-Resume.pdf', window.location.href).href
+    const link = document.createElement('a')
+    link.href = resumeUrl
+    link.download = 'Ehsan-Rasheed-Resume.pdf'
+    link.setAttribute('download', 'Ehsan-Rasheed-Resume.pdf')
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  };
+
   return (
-    <section id="home" className="pt-12">
-      <div className="container grid md:grid-cols-2 gap-10 items-center">
+    <section id="home" className="section pt-20 md:pt-32">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-4"
+          className="max-w-3xl mx-auto text-center space-y-6"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            Ehsan Rasheed
+          {/* Main Headline */}
+          <h1 className="text-hero text-soft-text">
+            Hi, I'm Ehsan Rasheed
           </h1>
-          <p className="text-lg text-soft-muted">
-            BS Computer Science | React Developer | Software Developer
+
+          {/* Professional Subtitle */}
+          <p className="text-2xl md:text-3xl text-soft-muted font-light">
+            Full-Stack Web Developer
           </p>
-          <div className="flex gap-3">
-            <a href="#projects" className="btn btn-primary">View My Work</a>
-            <a href="#contact" className="btn btn-ghost">Contact Me</a>
+
+          {/* Description */}
+          <p className="text-lg text-soft-muted leading-relaxed max-w-2xl mx-auto">
+            BS Computer Science student at <span className="font-semibold text-soft-text">COMSATS Lahore</span> specializing in modern web development with <span className="font-semibold text-soft-text">MERN stack</span>. I build scalable, production-ready applications with clean code and thoughtful design.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a href="#projects" className="btn btn-primary">
+              View My Projects
+            </a>
+            <button onClick={handleDownload} className="btn btn-secondary">
+              Download Resume
+            </button>
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="card p-8"
-        >
-          <p className="text-soft-muted">I craft modern, minimal, and reliable interfaces with
-            React and thoughtful engineering. Clean code, smooth UX, and a
-            professional finish—without the flash.
-          </p>
+
+          {/* Quick Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-8 justify-center pt-8 border-t border-gray-200 mt-12"
+          >
+            <div className="text-center">
+              <p className="text-2xl font-poppins font-bold text-soft-accent">5+</p>
+              <p className="text-sm text-soft-muted">Projects Built</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl font-poppins font-bold text-soft-accent">3+</p>
+              <p className="text-sm text-soft-muted">Years Learning</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl font-poppins font-bold text-soft-accent">MERN</p>
+              <p className="text-sm text-soft-muted">Stack Specialist</p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

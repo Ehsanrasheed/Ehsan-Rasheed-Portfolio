@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,24 +8,59 @@ html { scroll-behavior: smooth; }
 
 @layer base {
   body {
-    @apply bg-soft-bg text-soft-text antialiased;
+    @apply bg-soft-bg text-soft-text antialiased font-inter;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+  a {
+    @apply text-soft-accent hover:text-blue-600 transition-colors duration-200;
   }
 }
 
 @layer components {
   .container {
-    @apply max-w-6xl mx-auto px-4;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+  
+  /* Card styles */
   .card {
-    @apply bg-soft-surface shadow-soft rounded-xl border border-slate-200;
+    @apply bg-soft-surface rounded-lg border border-gray-200 shadow-soft transition-all duration-300;
   }
+  .card:hover {
+    @apply shadow-md border-gray-300;
+  }
+  
+  /* Button styles */
   .btn {
-    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-medium transition-all duration-300 ease-smooth;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium transition-all duration-200 ease-smooth cursor-pointer;
   }
   .btn-primary {
-    @apply bg-soft-text text-soft-surface hover:bg-slate-800 shadow-subtle;
+    @apply bg-soft-accent text-white hover:bg-blue-700 shadow-md;
+  }
+  .btn-secondary {
+    @apply bg-soft-surface text-soft-text border border-gray-300 hover:bg-gray-50;
   }
   .btn-ghost {
-    @apply text-soft-text hover:text-slate-700;
+    @apply text-soft-accent hover:underline;
+  }
+  
+  /* Typography utilities */
+  .text-hero {
+    @apply font-poppins text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+  .text-section-title {
+    @apply font-poppins text-3xl md:text-4xl font-bold;
+  }
+  .text-card-title {
+    @apply font-poppins text-xl font-semibold;
+  }
+  .text-muted {
+    @apply text-soft-muted;
+  }
+  
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24 lg:py-32;
   }
 }
